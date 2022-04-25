@@ -8,18 +8,20 @@ public sealed  class GameController
     private static GameController instance;
     public static GameController Instance
     {
-        get 
+        get
         {
             if (instance == null)
             {
                 instance = new GameController();
-                instance.CheckPoints.AddRange(GameObject.FindGameObjectsWithTag("Checkpoint"));
-                instance.checkPoints = instance.checkPoints.OrderBy(x => x.name).ToList();
+                instance.Checkpoints.AddRange(GameObject.FindGameObjectsWithTag("Checkpoint"));
+                instance.checkpoints = instance.checkpoints.OrderBy(x => x.name).ToList();
             }
             return instance;
         }
-    }
 
-    private List<GameObject> checkPoints = new List<GameObject>();
-    public List<GameObject> CheckPoints { get { return checkPoints; } }
+    }
+    private List<GameObject> checkpoints = new List<GameObject>();
+    public List<GameObject> Checkpoints { get { return checkpoints; } }
+    // Start is called before the first frame update
+
 }
